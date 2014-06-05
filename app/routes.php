@@ -16,7 +16,8 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-Route::get('users', function()
+// Route group for API versioning
+Route::group(array('prefix' => 'api/v1'), function()
 {
-	return 'Users!';
+	Route::resource('event', 'EventController');
 });
