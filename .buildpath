@@ -2,6 +2,6 @@
 <buildpath>
 	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
 	<buildpathentry kind="src" path="vendor/phpunit/phpunit"/>
-	<buildpathentry kind="src" path="src/ActivityAlerts"/>
 	<buildpathentry kind="src" path="test"/>
+	<buildpathentry excluding="phpunit/phpunit/" kind="src" path="vendor"/>
 </buildpath>
