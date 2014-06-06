@@ -11,11 +11,10 @@ class NotifierAwsSesService
 	
 	public function notify($recipients, $event) {
 		$sesClient = SesClient::factory ( array ('profile' => 'default', 'region' => 'us-east-1', 'key' => 'YOUR_AWS_ACCESS_KEY_ID', 'secret' => 'YOUR_AWS_SECRET_ACCESS_KEY', ) );
-		
+		$failedToSendNotification = false;
 		foreach ($recipients as $recipient)
 		{
 			$emailAddress = $recipient->email;
-			
 			//Now that you have the client ready, you can build the message
 			$msg = array();
 			$msg['Source'] = 'evans022@gmail.com';
@@ -40,7 +39,7 @@ class NotifierAwsSesService
 					$eventNotificationLog->log_type = 'Info';
 					$eventNotificationLog->log_message = 'Verify Email Identity was sent';
 					$eventNotificationLog->save();
-					return false;
+					$failedToSendNotification = true;
 				}
 				$result = $sesClient->sendEmail($msg);
 				
@@ -49,16 +48,20 @@ class NotifierAwsSesService
 				$eventNotificationLog->log_type = 'Info';
 				$eventNotificationLog->log_message = 'Email was sent successfully. Message Id is:  ' . $result->get('MessageId');
 				$eventNotificationLog->save();
-				return $result->get('MessageId');
+				
 			} catch (Exception $e) {
 				$eventNotificationLog = new \EventNotificationLog();
 				$eventNotificationLog->event_id = $event->id;
 				$eventNotificationLog->log_type = 'Error';
 				$eventNotificationLog->log_message = 'Email failed to be sent. Exception message is: ' . $e->getMessage();
 				$eventNotificationLog->save();
-				return false;
+				$failedToSendNotification = true;
 			}
 				
 		}
+		if ($failedToSendNotification) {
+			return false;
+		} 
+		return true;
 	}
 }
