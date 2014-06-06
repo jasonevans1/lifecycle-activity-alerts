@@ -10,7 +10,7 @@ class NotifierAwsSesService
 {
 	
 	public function notify($recipients, $event) {
-		$sesClient = SesClient::factory ( array ('profile' => 'default', 'region' => 'us-east-1' ) );
+		$sesClient = SesClient::factory ( array ('profile' => 'default', 'region' => 'us-east-1', 'key' => 'YOUR_AWS_ACCESS_KEY_ID', 'secret' => 'YOUR_AWS_SECRET_ACCESS_KEY', ) );
 		
 		foreach ($recipients as $recipient)
 		{

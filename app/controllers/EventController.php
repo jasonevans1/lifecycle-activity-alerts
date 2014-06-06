@@ -57,6 +57,7 @@ class EventController extends BaseController {
 			
 			$event->save();
 			
+			NotificationRulesProcessor::processRule($event);
 			return Response::json(array('error' => false,'event' => $event->toArray()),200);
 	}
 	
