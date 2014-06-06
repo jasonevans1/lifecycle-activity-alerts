@@ -10,10 +10,14 @@ use Illuminate\Support\Facades\DB;
 class NotificationRulesService
 {
 	
-	public function processRule($event) {
+	public function processRule($event,$type) {
 		$notificationRules = \NotificationRule::all();
 		foreach ($notificationRules as $notificationRule)
 		{
+			$ruleType = $notificationRule->rule_type;
+			if ($ruleType != $type) {
+				continue;
+			}
 			$conditions = $notificationRule->conditions;
 			$conditions = json_decode($conditions);
 			//loop on all the condition name/value.
