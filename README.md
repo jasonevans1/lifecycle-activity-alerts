@@ -1,9 +1,6 @@
 # Lifecycle Activity Alerts
 
-[![Build Status](https://travis-ci.org/jasonevans1/lifecycle-activity-alerts.png)](https://travis-ci.org/jasonevans1/lifecycle-activity-alerts)
-[![Coverage Status](https://coveralls.io/repos/jasonevans1/lifecycle-activity-alerts/badge.png?branch=master)](https://coveralls.io/r/jasonevans1/lifecycle-activity-alerts?branch=master)
-[![Total Downloads](https://poser.pugx.org/jasonevans1/lifecycle-activity-alerts/downloads.png)](https://packagist.org/packages/jasonevans1/lifecycle-activity-alerts)
-[![Latest Stable Version](https://poser.pugx.org/jasonevans1/lifecycle-activity-alerts/v/stable.png)](https://packagist.org/packages/jasonevans1/lifecycle-activity-alerts)
+A customizable rule-based application that accepts standardized, but flexible, JSON statements. Based on those statements, the Event Alerts system sends out notices on an instant or summarized basis.
 
 @todo
 
