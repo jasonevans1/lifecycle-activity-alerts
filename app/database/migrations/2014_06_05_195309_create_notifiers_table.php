@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEventTypesTable extends Migration {
+class CreateNotifiersTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -13,11 +13,11 @@ class CreateEventTypesTable extends Migration {
 	public function up()
 	{
 		//
-		Schema::create('event_types', function($table)
+		Schema::create('notifiers', function($table)
 		{
 			$table->increments('id');
-			$table->string('type_code',64)->unique();
-			$table->string('event_type_handler');
+			$table->string('notifier_code',64)->unique();
+			$table->string('notifier_class');
 			$table->timestamps();
 		});
 		
@@ -31,6 +31,7 @@ class CreateEventTypesTable extends Migration {
 	public function down()
 	{
 		//
+		Schema::drop('notifiers');
 	}
 
 }

@@ -16,8 +16,8 @@ class CreateEventPublisherTable extends Migration {
 		Schema::create('event_publishers', function($table)
 		{
 			$table->increments('id');
-			$table->string('publisher_code');
-			$table->string('application_code');
+			$table->string('publisher_code', 64)->unique();
+			$table->string('name');
 			$table->timestamps();
 		});
 	}

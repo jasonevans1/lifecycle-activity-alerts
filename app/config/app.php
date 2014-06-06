@@ -121,7 +121,8 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-
+		'Services\Activityalerts\NotifierAwsSesServiceProvider',
+		'Services\Activityalerts\NotificationRulesServiceProvider',
 	),
 
 	/*
@@ -188,7 +189,8 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
-
+		'AwsSesNotifier'        => 'Services\ActivityAlerts\NotifierAwsSesFacade',
+		'NotificationRulesProcessor'        => 'Services\ActivityAlerts\NotificationRulesFacade',
 	),
 
 );

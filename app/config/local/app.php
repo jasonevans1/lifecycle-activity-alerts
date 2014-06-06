@@ -15,4 +15,5 @@ return array(
 
 	'debug' => true,
 
+	'aws_ses_sourceemail' => 'evans022@gmail.com'
 );

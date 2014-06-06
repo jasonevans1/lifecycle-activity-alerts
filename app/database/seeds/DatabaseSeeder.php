@@ -13,6 +13,8 @@ class DatabaseSeeder extends Seeder {
 
 		$this->call('EventPublisherTableSeeder');
 		$this->call('EventTypeTableSeeder');
+		$this->call('NotificationRuleTableSeeder');
+		$this->call('NotifierTableSeeder');
 	}
 
 }

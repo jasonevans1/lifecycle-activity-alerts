@@ -8,7 +8,7 @@ class EventPublisherTableSeeder extends Seeder {
 		DB::table('event_publishers')->delete();
 
 		EventPublisher::create(array(
-		'application_code' => 'DefaultApplication',
+		'name' => 'Default API Publisher',
 		'publisher_code' => 'DefaultPublisher'
 		));
 

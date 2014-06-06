@@ -7,7 +7,7 @@
          processIsolation="false"
          stopOnFailure="false"
          syntaxCheck="false"
-         bootstrap="test/bootstrap.php">
+         bootstrap="bootstrap/autoload.php">
 
     <testsuites>
        <testsuite name="Lifecycle Activity Alerts">
