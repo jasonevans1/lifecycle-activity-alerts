@@ -13,7 +13,7 @@ class NotifierAwsSesServiceTest extends \TestCase
     public function testNotifyWithOneRecipient()
     {
     	$event = \EventData::find(1);
-    	$recipient = \Recipient::all()->take(2);
+    	$recipient = \Recipient::all()->take(1);
         $service = new NotifierAwsSesService();
         $this->assertTrue($service->notify($recipient,$event));
     }

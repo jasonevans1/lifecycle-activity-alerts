@@ -122,7 +122,8 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Services\Activityalerts\NotifierAwsSesServiceProvider',
-		'Services\Activityalerts\NotificationRulesServiceProvider'
+		'Services\Activityalerts\NotificationRulesServiceProvider',
+		'Services\Activityalerts\NotifierAwsSnsServiceProvider',
 	),
 
 	/*
@@ -190,7 +191,8 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 		'AwsSesNotifier'        => 'Services\ActivityAlerts\NotifierAwsSesFacade',
-		'NotificationRulesProcessor'        => 'Services\ActivityAlerts\NotificationRulesFacade'
+		'NotificationRulesProcessor'        => 'Services\ActivityAlerts\NotificationRulesFacade',
+		'AwsSnsNotifier'        => 'Services\ActivityAlerts\NotifierAwsSnsFacade',
 	),
 
 );
